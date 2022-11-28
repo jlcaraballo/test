@@ -1,5 +1,8 @@
 name: Commit to Notion
-on: push
+on:
+  - push
+  - pull_request:
+    types: [opened, reopened, closed]
 
 jobs:
   build:
@@ -7,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Commit to Notion
-        uses: jlcaraballo/gh-notion@v0.1.0
+        uses: jlcaraballo/gh-notion@0.1.0
         with:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           NOTION_SECRET: ${{ secrets.NOTION_SECRET }}
