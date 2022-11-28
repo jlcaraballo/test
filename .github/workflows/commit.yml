@@ -1,0 +1,14 @@
+name: Commit to Notion
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Commit to Notion
+        uses: jlcaraballo/gh-notion
+        with:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          NOTION_SECRET: ${{ secrets.NOTION_SECRET }}
+          NOTION_DATABASE: ${{ secrets.NOTION_DATABASE }}
