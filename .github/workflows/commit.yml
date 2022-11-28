@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Commit to Notion
-        uses: jlcaraballo/gh-notion
+        uses: jlcaraballo/gh-notion@v0.1.0
         with:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           NOTION_SECRET: ${{ secrets.NOTION_SECRET }}
